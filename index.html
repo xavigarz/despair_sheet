@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Despair Character Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-dark text-light">
+    <div class="container py-4">
+        <h1 class="text-center mb-4">Despair Character builder</h1>
+
+        <!-- Nav tabs -->
+            <ul class="nav nav-tabs mb-3" id="builderTabs" role="tablist">
+            <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#welcome">Welcome</button></li>
+            <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#background">Background</button></li>
+            <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#mark">Mark</button></li>
+            <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#powers">Powers</button></li>
+            <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#attributes">Attributes</button></li>
+            <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#character">Character</button></li>
+            <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#summary">Summary</button></li>
+        </ul>
+
+        <!-- Tab content -->
+        <div class="tab-content">
+            <!-- Welcome Tab -->
+            <div class="tab-pane fade show active" id="welcome">
+                <p>Welcome to the Despair Character Builder! Follow these steps:</p>
+                <ol>
+                <li>Select your background</li>
+                <li>Choose your Mark</li>
+                <li>Assign ability scores</li>
+                <li>Review your character summary</li>
+                </ol>
+            </div>
+
+
+            <!-- Background Tab -->
+            <div class="tab-pane fade" id="background">
+                <div class="container">
+                    <div class="row">
+                        <h3>
+                            Backgrounds
+                        </h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>
+                                Your <strong>Background</strong> is your life. Well, your previous life. It helps you to understand what your character did until they got their Mark, what they know, what they are good at, what possible skills and feats they can have.
+                            </p>
+                            <p>
+                                A Background gives your character a boost in Attributes, some Skills (with specialities), a Feat and one additional talent.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="backgroundSelect" class="form-label">Choose Background</label>
+                            <select id="backgroundSelect" class="form-select">
+                                <option value="">Select...</option>
+                                <option value="Noble">Noble</option>
+                                <option value="Artisan">Artisan</option>
+                                <option value="Traveler">Traveler</option>
+                                <option value="Worker">Worker</option>
+                            </select>
+                            Description
+                                <p><i>
+                                    You joined as an apprentice of a local artisan, maybe a baker or a smith or a glassblower. You managed to achieve the level of. Apprentice - Journeyman - The Master
+                                </i></p>
+                                <ul>
+                                    <li>Feat:</li>
+                                    <li>Talent</li>
+                                    <li>Resource:</li>
+                                    <li>Equipment:</li>
+                                </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="bgAttributesSelect" class="form-label">Choose Attributes</label>
+                            <select id="bgAttributesSelect" class="form-select">
+                                <option value="">Select...</option>
+                                <option value="Physical">Physical</option>
+                                <option value="Body">Body</option>
+                                <option value="Reflexes">Reflexes</option>
+                                <option value="Mind">Mind</option>
+                                <option value="Social">Social</option>
+                            </select>
+                            <label for="bgSkillsSelect" class="form-label">Choose two skills</label>
+                            <select id="bgSkillsSelect" class="form-select">
+                                <option value="">Select...</option>
+                                <option value="Craft">Craft</option>
+                                <option value="Science">Science</option>
+                                <option value="Academia">Academia</option>
+                                <option value="Instinct">Instinct</option>
+                                <option value="Conversation">Conversation</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Background Tab END-->
+
+
+            <!-- Mark Tab -->
+            <div class="tab-pane fade" id="mark">
+                <div class="container">
+                    <div class="row">
+                        <h3>
+                            Mark
+                        </h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>
+                                Marks are the results of being exposed to the influence of the Realms Beyond. In most of the cases, the interaction with those phenomena is fatal for a normal human. However, the few unfortunate that survive an encounter with that horror will develop certain size effects. They have been marked.
+                            </p>
+                            <p>
+                                Some marks are visible: for example, someone marked by Mark of Destruction will show burned skin or scars, while a person bearing the Mark of Corruption will have pustulent or other infectious things.
+                            </p>
+                            <p>
+                                Other marks are more subtle, they leave a mark in one's soul.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="markSelect" class="form-label">Choose Mark</label>
+                            <select id="markSelect" class="form-select mb-3">
+                            <option value="">Select...</option>
+                            <option value="Destruction">Destruction</option>
+                            <option value="Corruption">Corruption</option>
+                            <option value="Oblivion">Oblivion</option>
+                            <option value="Rage">Rage</option>
+                            <option value="Temptation">Temptation</option>
+                            <option value="Aberration">Aberration</option>
+                            <option value="Hunger">Hunger</option>
+                            <option value="Shadows">Shadows</option>
+                            </select>
+                            Description
+                                <p><i>
+                                    You feel the fire of hell burning inside you.
+                                </i></p>
+                                <ul>
+                                    <li>Attribute increase:</li>
+                                    <li>Talent:</li>
+                                    <li>Flaw:</li>
+                                    <li>Physical traits:</li>
+                                </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="markAttributesSelect" class="form-label">Choose Attributes</label>
+                            <select id="bgAttributesSelect" class="form-select">
+                                <option value="">Select...</option>
+                                <option value="Physical">Physical</option>
+                                <option value="Body">Body</option>
+                                <option value="Reflexes">Reflexes</option>
+                                <option value="Mind">Mind</option>
+                                <option value="Social">Social</option>
+                            </select>
+                            <label for="markTratiSelect" class="form-label">Choose physical Trait</label>
+                            <select id="markTratiSelect" class="form-select">
+                                <option value="">Select...</option>
+                                <option value="1">You have burn scars across your face, neck and arms.</option>
+                                <option value="2">Your eyes glow like ambers.</option>
+                                <option value="3">When you are angry smoke comes out from our ears.</option>
+                                <option value="4">Sometimes sparks appear around your fingertips.</option>
+                                <option value="5">Your footsteps burn the surface and you leave marks in wood or grass.</option>
+                                <option value="6">Your skin is very hot, like having a very high fever.</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mark Tab END-->
+
+            <!-- Summary Tab -->
+            <div class="tab-pane fade" id="summary">
+
+                <div class="container">
+                    <div class="row">
+                        <h3>
+                            Summary
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            Name:
+                        </div>
+                        <div class="col-md-4">
+                            Concept:
+                        </div>
+                        <div class="col-md-4">
+                            Player:
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            Background:
+                        </div>
+                        <div class="col-md-4">
+                            Mark:
+                        </div>
+                        <div class="col-md-4">
+                            x:
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>Attributes</h5>
+                                Physical
+                                Body
+                                Reflexes
+                                Mind
+                                Social
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <h5>MARK: Destruction</h5>
+                        <dl>
+                            <dt>
+                            Talent: Cauterise
+                            </dt>
+                                <dd>
+                                You can use fire to heal your wounds. At first level, you can heal one level of health with each activation.
+                                </dd>
+                                <dd>
+                                If you activate your mark at a higher level, you can heal more wounds with each use.
+                                </dd>
+                            <dt>
+                            Flaw: Pyromania
+                            </dt>
+                                <dd>
+                                You need to burn things. Once a day you must set fire and watch burn a medium size object (cart, wardrobe) or bigger (a house). Otherwise, you can burn a living creature.
+                                </dd>
+                                <dd>
+                                If you don't do this once a day, you roll despair at your maximum level after you rest.
+                                </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Summary Tab END-->
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
