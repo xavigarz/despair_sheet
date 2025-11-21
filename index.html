@@ -5,7 +5,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-dark text-light">
+<body class="bg-light text-dark">
     <div class="container py-4">
         <h1 class="text-center mb-4">Despair Character builder</h1>
 
@@ -15,7 +15,7 @@
             <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#background">Background</button></li>
             <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#mark">Mark</button></li>
             <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#powers">Powers</button></li>
-            <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#attributes">Attributes</button></li>
+            <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#bonus">Bonus</button></li>
             <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#character">Character</button></li>
             <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#summary">Summary</button></li>
         </ul>
@@ -55,11 +55,10 @@
                             <label for="backgroundSelect" class="form-label">Choose Background</label>
                             <select id="backgroundSelect" class="form-select">
                                 <option value="">Select...</option>
-                                <option value="Noble">Noble</option>
-                                <option value="Artisan">Artisan</option>
-                                <option value="Traveler">Traveler</option>
-                                <option value="Worker">Worker</option>
                             </select>
+                            <div class="descriptionInfo" id="backgroundInfo">
+                                Select a Background
+                            </div>
                             Description
                                 <p><i>
                                     You joined as an apprentice of a local artisan, maybe a baker or a smith or a glassblower. You managed to achieve the level of. Apprentice - Journeyman - The Master
@@ -72,24 +71,28 @@
                                 </ul>
                         </div>
                         <div class="col-md-4">
-                            <label for="bgAttributesSelect" class="form-label">Choose Attributes</label>
-                            <select id="bgAttributesSelect" class="form-select">
+                            <div class="row">
+                            <label for="bgAttributesSelect1" class="form-label">Choose attribute to increase by 1</label>
+                            <select id="bgAttributesSelect1" class="form-select">
                                 <option value="">Select...</option>
-                                <option value="Physical">Physical</option>
-                                <option value="Body">Body</option>
-                                <option value="Reflexes">Reflexes</option>
-                                <option value="Mind">Mind</option>
-                                <option value="Social">Social</option>
                             </select>
-                            <label for="bgSkillsSelect" class="form-label">Choose two skills</label>
+                            </div>
+
+                            <div class="row">
+                            <label for="bgAttributesSelect2" class="form-label">Choose attribute to increase by 2</label>
+                            <select id="bgAttributesSelect2" class="form-select">
+                                <option value="">Select...</option>
+                            </select>
+                            </div>
+
+                            <div class="row">
+                            <label for="bgSkillsSelect" class="form-label">Choose one skill to increase by 3</label>
+                            <label for="bgSkillsSelect" class="form-label">The other two will be increased by 2</label>
                             <select id="bgSkillsSelect" class="form-select">
                                 <option value="">Select...</option>
-                                <option value="Craft">Craft</option>
-                                <option value="Science">Science</option>
-                                <option value="Academia">Academia</option>
-                                <option value="Instinct">Instinct</option>
-                                <option value="Conversation">Conversation</option>
                             </select>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -121,35 +124,15 @@
                             <label for="markSelect" class="form-label">Choose Mark</label>
                             <select id="markSelect" class="form-select mb-3">
                             <option value="">Select...</option>
-                            <option value="Destruction">Destruction</option>
-                            <option value="Corruption">Corruption</option>
-                            <option value="Oblivion">Oblivion</option>
-                            <option value="Rage">Rage</option>
-                            <option value="Temptation">Temptation</option>
-                            <option value="Aberration">Aberration</option>
-                            <option value="Hunger">Hunger</option>
-                            <option value="Shadows">Shadows</option>
                             </select>
-                            Description
-                                <p><i>
-                                    You feel the fire of hell burning inside you.
-                                </i></p>
-                                <ul>
-                                    <li>Attribute increase:</li>
-                                    <li>Talent:</li>
-                                    <li>Flaw:</li>
-                                    <li>Physical traits:</li>
-                                </ul>
+                            <div class="descriptionInfo" id="markInfo">
+                                Select a Mark
+                            </div>
                         </div>
                         <div class="col-md-4">
-                            <label for="markAttributesSelect" class="form-label">Choose Attributes</label>
-                            <select id="bgAttributesSelect" class="form-select">
+                            <label for="markAttributesSelect" class="form-label">Choose Attribute</label>
+                            <select id="markAttributesSelect" class="form-select">
                                 <option value="">Select...</option>
-                                <option value="Physical">Physical</option>
-                                <option value="Body">Body</option>
-                                <option value="Reflexes">Reflexes</option>
-                                <option value="Mind">Mind</option>
-                                <option value="Social">Social</option>
                             </select>
                             <label for="markTratiSelect" class="form-label">Choose physical Trait</label>
                             <select id="markTratiSelect" class="form-select">
@@ -167,9 +150,67 @@
             </div>
             <!-- Mark Tab END-->
 
+
+            <!-- Bonus Tab -->
+            <div class="tab-pane fade" id="bonus">
+                <div class="container">
+                    <div class="row">
+                        <h3>
+                            Bonus
+                        </h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <table id="attributesTable">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Base</th>
+                                            <th>Background</th>
+                                            <th>Mark</th>
+                                            <th>Bonus</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Rows will be filled by JS-->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <label for="bonusAttributesSelect" class="form-label">Choose Attribute</label>
+                                <select id="bonusAttributesSelect" class="form-select">
+                                    <option value="">Select...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-left mb-6">Skills</h5>
+                            <p>Remaining skill points: <span id="remainingSkillPoints">0</span></p>
+                            <div id="bonus-skill-list"></div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Skill</th>
+                                        <th>Background</th>
+                                        <th>Bonus</th>
+                                        <th>Total</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bonusSkillsTable">
+                                    <!-- Rows will be filled by JS-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Attributes Tab END-->
+
             <!-- Summary Tab -->
             <div class="tab-pane fade" id="summary">
-
                 <div class="container">
                     <div class="row">
                         <h3>
@@ -178,37 +219,40 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-4" id="summary-name">
                             Name:
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4" id="summary-concept">
                             Concept:
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4" id="summary-player">
                             Player:
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-4" id="summary-background">
                             Background:
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4" id="summary-mark">
                             Mark:
                         </div>
-                        <div class="col-md-4">
-                            x:
+                        <div class="col-md-4" id="summary-mark_level">
+                            Mark Level:
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-4">
                             <h5>Attributes</h5>
-                                Physical
-                                Body
-                                Reflexes
-                                Mind
-                                Social
+
+                        <table id="summaryAttributesTable">
+                            <tbody>
+                                <!-- Rows will be filled by JS-->
+                            </tbody>
+                        </table>
+
+
                         </div>
                     </div>
 
@@ -242,5 +286,7 @@
 
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="dist/data.js"></script>
+    <script src="dist/main.js"></script>
 </body>
 

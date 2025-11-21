@@ -2,6 +2,50 @@ h1,h3 {
     color: #741b47;
 }
 
-body{
+body {
     font-family: "Georgia", serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #741b47;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background: #741b47;
+    color: white;
+}
+
+.row {
+    padding: 10px;
+    border: 1px solid blue;
+}
+
+.col {
+    padding: 10px;
+    border: 1px solid green;
+}
+
+.descriptionInfo {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: lightgoldenrodyellow;
+    color: #980000;
+}
+
+button {
+    padding: 4px 8px;
+    margin: 0 2px;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
 }
